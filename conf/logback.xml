@@ -1,0 +1,25 @@
+<configuration scan="true">
+    <!--<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+    <!--<file>/var/log/activate-logs/couchbaseloader.log</file>-->
+    <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+    <!--&lt;!&ndash; daily rollover &ndash;&gt;-->
+    <!--<fileNamePattern>/var/log/activate-logs/couchbaseloader.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+    <!--&lt;!&ndash; keep 5 days' worth of history &ndash;&gt;-->
+    <!--<maxHistory>5</maxHistory>-->
+    <!--</rollingPolicy>-->
+
+    <!--<encoder>-->
+    <!--<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %-5level %logger{36} [req: %X{requestId}, visitor: %X{visitorId}] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

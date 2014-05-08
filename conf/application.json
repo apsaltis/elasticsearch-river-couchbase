@@ -1,0 +1,15 @@
+{
+    "couchbase": {
+        "host": "127.0.0.1",
+        "port": "8091",
+        "base": "pools",
+        "bucket": "default",
+        "user": "",
+        "pass": "",
+        "timeout": "0"
+    },
+    "solr": {
+        "zkhost": "dev.master.reporting.ensighten.com/solr:2181",
+        "collection": "activate_one"
+    }
+}
